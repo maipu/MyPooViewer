@@ -292,6 +292,24 @@ class TetCom(Element):
         self.faces = [(0,1,2,3),(0,1,5,4),(1,2,5),(2,3,6),(3,0,4,6),(4,5,6),(5,2,6)]
         self.signature = [self.puntos,self.aristas,len(self.faces),(4,3,0,0)]
 
+class DefPrism(Element):
+    def __init__(self):
+        Element.__init__(self)
+        self.puntos = 6
+        self.aristas = 11
+        self.vertices = []
+        self.faces = [(0,1,2,3),(0,4,1),(1,4,2),(2,3,5),(3,5,0),(0,5,4),(4,2,5)]
+        self.signature = [self.puntos,self.aristas,len(self.faces),(6,1,0,0)]
+
+class DefTetCom(Element):
+    def __init__(self):
+        Element.__init__(self)
+        self.puntos = 7
+        self.aristas = 14
+        self.vertices = []
+        self.faces = [(0,1,2,3),(0,4,1),(1,4,2),(2,3,5),(3,5,0),(0,6,4),(0,5,6),(2,6,4),(2,5,6)]
+        self.signature = [self.puntos,self.aristas,len(self.faces),(8,1,0,0)]
+
 class Chungungo(Element):
     def __init__(self):
         Element.__init__(self)
@@ -308,6 +326,8 @@ figuresType = { "H":Hex,
                 "P":Pyramid,
                 "R":Prism,
                 "TC":TetCom,
+                "DP":DefPrism,
+                "DTC":DefTetCom,
                 }
 
 def readFile(fileName):
