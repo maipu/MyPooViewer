@@ -1,4 +1,6 @@
-﻿import sys
+﻿# Hola niños =)
+
+import sys
 import math
 __main__display = False
 if "-g" in sys.argv:
